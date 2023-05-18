@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="myStyle.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Paynting</title>
+  </head>
+
+  <body>
+    <main id="mainHome">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">Paynting</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarText"
+            aria-controls="navbarText"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Sobre nós </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contato</a>
+              </li>
+            </ul>
+            <span class="navbar-text">
+              <div class="dropdown-center">
+                <button
+                  class="btn btn-secondary dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Minhas informações
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" id="email"></a></li>
+                  <li><a class="dropdown-item" id="idLogado"></a></li>
+                  
+                </ul>
+              </div>
+            </span>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container-sm" id="container-servicos">
+        <div class="card" style="width: 18rem">
+          <img src="img/2D-ilustraçao.png" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">2D Ilustração</h5>
+            <p class="card-text">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis
+              dicta, est alias id ex voluptatem exercitationem, doloribus
+              obcaecati provident magni, sit facilis illo hic omnis tempore
+              eligendi! Temporibus, dolorem reprehenderit!
+            </p>
+            <a
+              class="btn btn-primary"
+              id="ilustracao-2d"
+              onclick="ilustracao2d()"
+              >Pedir ilustração 2D</a
+            >
+          </div>
+        </div>
+        <div class="card" style="width: 18rem">
+          <img src="img/icones.jpg" class="card-img-top" />
+          <div class="card-body">
+            <h5 class="card-title">Ícone</h5>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Blanditiis a, non tenetur molestiae aliquam, nesciunt assumenda
+              porro reiciendis labore exercitationem similique iste quod soluta,
+              omnis eaque eum rerum? Iste, laudantium.
+            </p>
+            <a class="btn btn-primary" id="icone" onclick=" icone()"
+              >Pedir Ícone</a
+            >
+          </div>
+        </div>
+        <div class="card" style="width: 18rem">
+          <img
+            src="https://media.giphy.com/media/3oKIPEqDGUULpEU0aQ/giphy.gif"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">Animação</h5>
+            <p class="card-text">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis
+              dicta, est alias id ex voluptatem exercitationem, doloribus
+              obcaecati provident magni, sit facilis illo hic omnis tempore
+              eligendi! Temporibus, dolorem reprehenderit!
+            </p>
+            <a class="btn btn-primary" id="animacao" onclick="animacao()"
+              >Pedir animação</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="container-sm" id="container-orcamento" style="display: none">
+        <hr />
+        <h4 class="text-center">Formulário do pedido</h4>
+        <br />
+        <form>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Serviço escolhido:
+            </label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput1"
+              readonly
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label"
+              >Descrição do serviço</label
+            >
+            <textarea
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="3"
+              placeholder="descreva seu serviço aqui"
+            ></textarea>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Seu nome:
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nomePedido"
+                  readonly
+                />
+              </div>
+            </div>
+            <div class="col">
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Sobrenome:
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="sobrenomePedido"
+                  readonly
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Telefone:
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="telefonePedido"
+                  readonly
+                />
+              </div>
+            </div>
+            <div class="col">
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Email:
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="emailPedido"
+                  readonly
+                />
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <div class="col-6">
+          <button class="btn btn-primary" onclick="gerarOrcamentoePrazo()">
+            Calcular prazo e orçamento
+          </button>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <label class="form-label">Prazo:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="prazo"
+              placeholder="Aguardando informações..."
+              readonly
+            />
+          </div>
+          <div class="col">
+            <label class="form-label">Orçamento:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="orcamento"
+              placeholder="Aguardando informações..."
+              readonly
+            />
+          </div>
+        </div>
+
+        <input
+          type="button"
+          value="Registrar Pedido"
+          id="botaoPedido"
+          class="btn btn-primary"
+          onclick="registrarPedido()"
+          style="display: none"
+        />
+        <hr />
+      </div>
+
+      <footer class="text-light text-center">
+        <div class="row">
+          <p>@Thalita2023</p>
+        </div>
+      </footer>
+    </main>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+    crossorigin="anonymous"
+  ></script>
+  <script src="../codigo.js"></script>
+  <script></script>
+</html>

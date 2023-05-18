@@ -1,0 +1,78 @@
+body {
+  overflow-x: hidden;
+}
+#homeConteudo {
+  padding: 40px;
+}
+
+#homeConteudo,
+h1 {
+  padding: 40px;
+}
+
+#container-servicos {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer p {
+  color: black;
+  padding: 45px;
+  font-weight: 500;
+  padding: 12px;
+}
+
+#loginForm {
+  margin: 20px;
+}
+
+.card {
+  margin-bottom: 30px;
+}
+
+#formCadastro {
+  margin: 20px;
+}
+
+#containerUsuarios {
+  margin-top: 20px;
+}
+
+#formAtualizar {
+  justify-content: center;
+  margin: 10px;
+}
+
+#botoes {
+  margin-left: 50%;
+  margin-right: 50%;
+  margin-top: 2%;
+  margin-bottom: 3%;
+  display: flex;
+  justify-content: center;
+}
+#botaoPut {
+  margin: 3%;
+}
+#buscaAtualizar {
+  display: flex;
+}
+#buscaAtualizar button {
+  margin-top: 10px;
+}
+#containerDelete {
+  display: flex;
+  justify-content: center;
+}
+h6 {
+  padding: 10px;
+}
+
+#container-orcamento {
+  margin-top: 40px;
+}
+#container-orcamento button,
+input {
+  margin: 10px 0px 14px 0px;
+}
