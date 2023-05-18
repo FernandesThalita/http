@@ -24,7 +24,7 @@ function buscarUsuario() {
   var idParaAtualizar = document.getElementById("idParaBusca").value;
 
   //fetch que consome os dados dos usuarios
-  fetch(`http://localhost:3000/usuarios/`, {
+  fetch(`usuarios/`, {
     method: "GET",
   })
     .then((response) => response.json())
