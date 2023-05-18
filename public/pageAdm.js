@@ -92,7 +92,7 @@ function atualizarUsuario() {
     });
   } else {
     //Fetch com metodo PUT, que atualiza o id em questao
-    fetch(`http://localhost:3000/usuarios/${idForm}`, {
+    fetch(`usuarios/${idForm}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -114,7 +114,7 @@ function atualizarUsuario() {
 
 function deletarUsuario() {
   const idDeletar = document.getElementById("idDeletar").value;
-  fetch(`http://localhost:3000/usuarios`)
+  fetch(`usuarios`)
     .then((resposta) => resposta.json())
     .then((data) => {
       const usuarioEncontrado = data.find(
@@ -136,7 +136,7 @@ function deletarUsuario() {
           confirmButtonText: "Sim, deletar",
         }).then((result) => {
           if (result.isConfirmed) {
-            fetch(`http://localhost:3000/usuarios/${usuarioEncontrado.id}`, {
+            fetch(`usuarios/${usuarioEncontrado.id}`, {
               method: "DELETE",
             });
           }
@@ -153,7 +153,7 @@ function deletarUsuario() {
 //Fetch, com metodo GET. Que obtem todos os usarios e cria novos elementos html. De CARDS
 //Tambem é aplicada classes boostrap em cada elemento html
 //A quantidade de cards é reliva a quantidade de usuarios
-fetch(` http://localhost:3000/usuarios`, {
+fetch(`usuarios`, {
   method: "GET",
   headers: {
     "Content-Type": "application/json",
